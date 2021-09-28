@@ -8,16 +8,16 @@ module.exports = {
   main: async (req, res) => {
     const { id, url, limit } = req.query;
     // chromium setup for deploy
-    // const browser = await puppeteer.launch({
-    //   headless: true,
-    //   args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    //   executablePath:
-    //     "/usr/src/app/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux/chrome",
-    // });
-    // for local test
     const browser = await puppeteer.launch({
       headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      executablePath:
+        "/usr/src/app/node_modules/puppeteer/.local-chromium/linux-901912/chrome-linux/chrome",
     });
+    // for local test
+    // const browser = await puppeteer.launch({
+    //   headless: true,
+    // });
     const page = await browser.newPage();
     await page.setViewport({ width: 1280, height: 800 });
     await page.goto(url);
@@ -58,8 +58,7 @@ module.exports = {
             }
           }
         }
-        // console.log(videoUrl.toString());
-        console.log(i);
+        // console.log(i);
         // download video and get data
         if (boolean == false) {
           const downloadFile = await application.download(
@@ -67,8 +66,7 @@ module.exports = {
             id
           );
           downloaded += 1;
-          // const flat = await application.flatten(downloadFile);
-          // console.log(flattern);
+
           await downloaddata.push(downloadFile);
           console.log("Downloaded files from : " + videoUrl.toString());
           console.log("files downloaded " + downloaded);
@@ -97,7 +95,6 @@ module.exports = {
     } catch (error) {
       console.log(error);
     }
-    // console.log(listdata);
     res.status(201).send({ message: `Downloaded files: ${downloaded}` });
   },
 

@@ -52,9 +52,6 @@ module.exports = {
   },
 
   format: (arr, scale, loc) => {
-    // var arr = data.export();
-    console.log(arr);
-
     if (arr.text) {
       // font colors
       let clr = arr.text.font.colors[0].reverse();
@@ -66,7 +63,6 @@ module.exports = {
         Math.round(arr.text.font.sizes[0] * arr.text.transform.yy * 100) * 0.01;
       let height =
         Math.round(arr.text.font.sizes[0] * arr.text.transform.xx * 100) * 0.01;
-      // console.log(font.trim());
 
       var dt = {
         type: "textbox",
@@ -221,7 +217,6 @@ module.exports = {
   },
 
   saveDb: async (data) => {
-    // console.log(data.keywords);
     let response;
 
     const doc = await db
@@ -254,9 +249,6 @@ module.exports = {
   },
 
   search: async (keyword, limit, skip) => {
-    // console.log(id);
-    // console.log(keyword);
-
     return db.search({
       query: keyword,
       fields: ["_id", "filename", "name", "keywords"],

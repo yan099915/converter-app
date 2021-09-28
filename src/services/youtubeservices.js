@@ -47,7 +47,6 @@ module.exports = {
         m4a: url1,
         metadata: metadata,
       };
-      // console.log(info.videoDetails);
       return data;
     } catch (error) {
       console.log(error);
@@ -63,7 +62,6 @@ module.exports = {
   },
 
   savedata: async (data) => {
-    console.log(data);
     let response;
 
     const doc = await db
@@ -96,9 +94,6 @@ module.exports = {
   },
 
   search: async (keyword, limit, skip) => {
-    // console.log(id);
-    // console.log(keyword);
-
     return db.search({
       query: keyword,
       fields: [
