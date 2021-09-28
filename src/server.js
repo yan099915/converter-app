@@ -9,5 +9,6 @@ app.use(express.json());
 
 app.use(router.psdRouter);
 app.use(router.ytRouter);
+app.use(router.iconRouter);
 
 module.exports = app;

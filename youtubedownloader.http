@@ -25,3 +25,7 @@ content-type: application/json
 ####
 GET http://localhost:3000/getall HTTP/1.1
 content-type: application/json
+
+####
+GET http://localhost:3000/iconsearch?query=abc&product_type=item&asset=icon&per_page=20&page=2&sort=relevant HTTP/1.1
+content-type: application/json  
