@@ -1,0 +1,48 @@
+# 
+#### upload file
+POST http://psd-to-fabricjs.deploy.cbs.co.id/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="health_14.zip"
+Content-Type: application/zip
+
+< ./health_14.zip
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+#### searching using id / keyword / filename 
+GET http://psd-to-fabricjs.deploy.cbs.co.id/search?keyword=health_14&limit=1&skip=0 HTTP/1.1
+content-type: application/json
+
+#### getall
+GET http://psd-to-fabricjs.deploy.cbs.co.id/search?keyword=sofia&limit=1&skip=0 HTTP/1.1
+content-type: application/json
+
+
+
+
+
+
+# local testing
+#### upload file
+POST http://localhost:3000/upload
+Content-Type: multipart/form-data; boundary=----WebKitFormBoundary7MA4YWxkTrZu0gW
+
+
+------WebKitFormBoundary7MA4YWxkTrZu0gW
+Content-Disposition: form-data; name="file"; filename="health_14.zip"
+Content-Type: application/zip
+
+< ./health_14.zip
+------WebKitFormBoundary7MA4YWxkTrZu0gW--
+
+
+#### searching using id / keyword / filename 
+GET http://localhost:3000/psdsearch?keyword=post04&limit=1&skip=0 HTTP/1.1
+content-type: application/json
+
+#### getall
+GET http://localhost:3000/psdsearch?keyword=sofia&limit=1&skip=0 HTTP/1.1
+content-type: application/json

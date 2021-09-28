@@ -1,0 +1,27 @@
+# download file
+####
+GET http://yt-downloader.deploy.cbs.co.id/?id=ID125AB&url=https://www.youtube.com/c/Rfmofficialpagetr/videos&limit=1 HTTP/1.1
+content-type: application/json
+
+
+#search by userid / title / description / youtube keywords
+####
+GET http://yt-downloader.deploy.cbs.co.id/search?keyword=ID125AB&limit=1&skip=0 HTTP/1.1
+content-type: application/json
+
+
+
+
+# local testing
+####
+GET http://localhost:3000/?id=ID125AB&url=https://www.youtube.com/c/Rfmofficialpagetr/videos&limit=1 HTTP/1.1
+content-type: application/json
+
+
+####
+GET http://localhost:3000/ytsearch?keyword=ID125AB&limit=1&skip=0 HTTP/1.1
+content-type: application/json
+
+####
+GET http://localhost:3000/getall HTTP/1.1
+content-type: application/json
